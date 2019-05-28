@@ -1,0 +1,44 @@
+{
+  "name": "edublocks-micro",
+  "version": "0.0.1",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "tsc --watch & watchify -t brfs src/main.js -o web/build/main.js",
+    "build": "tsc && browserify -t brfs src/main.js -o web/build/main.js",
+    "serve": "http-server web",
+    "lint": "tslint src/**/*.ts"
+  },
+  "repository": "https://github.com/AllAboutCode/edublocks-micropython",
+  "keywords": [],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@types/es6-promise": "0.0.32",
+    "@types/gulp": "^4.0.2",
+    "@types/gulp-gzip": "0.0.30",
+    "@types/gulp-uglify": "0.0.30",
+    "@types/lodash": "^4.14.62",
+    "@types/node": "^7.0.12",
+    "@types/pump": "^1.0.1",
+    "@types/shelljs": "^0.7.0",
+    "brfs": "^1.6.1",
+    "browserify": "^14.3.0",
+    "gulp": "^3.9.1",
+    "gulp-brotli": "^1.2.0",
+    "gulp-gzip": "^1.4.0",
+    "gulp-uglify": "^2.1.2",
+    "http-server": "^0.9.0",
+    "parcel": "^1.8.1",
+    "pump": "^1.0.2",
+    "shelljs": "^0.7.7",
+    "tslint": "^5.0.0",
+    "typescript": "^2.2.2",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "picnic": "^6.3.2",
+    "preact": "^8.1.0"
+  }
+}

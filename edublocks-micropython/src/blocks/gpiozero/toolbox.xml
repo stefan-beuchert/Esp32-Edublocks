@@ -1,0 +1,116 @@
+<category name="gpiozero" colour="60">
+  <category name="General" colour="60">
+    <block type="importgpiozero"></block>
+    <block type="importtime"></block>
+  </category>
+  <category name="Inputs" colour="196">
+    <category name="Button" colour="196">
+      <block type="buttonset"></block>
+      <block type="buttonaction"></block>
+      <block type="buttonvar"></block>
+    </category>
+    <category name="Line Sensor" colour="196">
+      <block type="lineset"></block>
+      <block type="lineaction"></block>
+      <block type="linevar"></block>
+    </category>
+    <category name="Motion Sensor" colour="196">
+      <block type="motionset"></block>
+      <block type="motionaction"></block>
+      <block type="motionvar"></block>
+    </category>
+    <category name="Light Sensor" colour="196">
+      <block type="lightset"></block>
+      <block type="lightaction"></block>
+      <block type="lightvar"></block>
+    </category>
+    <category name="Distance Sensor" colour="196">
+      <block type="distanceset"></block>
+      <block type="distanceaction"></block>
+      <block type="distancevar"></block>
+    </category>
+  </category>
+  <category name="Outputs" colour="0">
+    <category name="LED" colour="0">
+      <block type="ledset"></block>
+      <block type="ledaction"></block>
+      <block type="ledvar"></block>
+    </category>
+    <category name="PWMLED" colour="0">
+      <block type="pledset"></block>
+      <block type="pledaction"></block>
+      <block type="pledvar"></block>
+    </category>
+    <category name="RGBLED" colour="0">
+      <block type="rgbledset"></block>
+      <block type="rgbledaction"></block>
+      <block type="rgbledvar"></block>
+    </category>
+    <category name="Buzzer" colour="0">
+      <block type="buzzerset"></block>
+      <block type="buzzeraction"></block>
+      <block type="buzzervar"></block>
+    </category>
+    <category name="Motor" colour="0">
+      <block type="motorset"></block>
+      <block type="motoraction"></block>
+      <block type="motorvar"></block>
+    </category>
+    <category name="Servo" colour="0">
+      <block type="servoset"></block>
+      <block type="servoaction"></block>
+      <block type="servovar"></block>
+    </category>
+    <category name="Angular Servo" colour="0">
+      <block type="angset"></block>
+      <block type="angaction"></block>
+      <block type="angvar"></block>
+    </category>
+  </category>
+  <category name="Boards &amp; Accessories" colour="45">
+    <category name="LEDBoard" colour="45">
+      <block type="ledbset"></block>
+      <block type="ledbaction"></block>
+      <block type="ledbvar"></block>
+    </category>
+    <category name="LED Bar Graph" colour="45">
+      <block type="graphset"></block>
+      <block type="graphaction"></block>
+      <block type="graphvar"></block>
+    </category>
+    <category name="Button Board" colour="45">
+      <block type="buttonbset"></block>
+      <block type="buttonbaction"></block>
+      <block type="buttonbvar"></block>
+    </category>
+    <category name="Traffic Lights" colour="45">
+      <block type="trafficset"></block>
+      <block type="trafficaction"></block>
+      <block type="trafficvar"></block>
+    </category>
+    <category name="Energenie" colour="45">
+      <block type="energenieset"></block>
+      <block type="energenieaction"></block>
+      <block type="energenievar"></block>
+    </category>
+    <category name="CamJam Kit 3 Robot" colour="45">
+      <block type="camjamset"></block>
+      <block type="camjamaction"></block>
+      <block type="camjamvar"></block>
+    </category>
+  </category>
+  <category name="Internal &amp; SPI Devices" colour="150">
+    <category name="Time Of Day" colour="150">
+      <block type="timeset"></block>
+    </category>
+    <category name="Ping Server" colour="150">
+      <block type="pingset"></block>
+    </category>
+    <category name="CPU Temperature" colour="150">
+      <block type="cpuset"></block>
+    </category>
+    <category name="Analogue to Digital" colour="150">
+      <block type="adc"></block>
+    </category>
+  </category>
+</category>

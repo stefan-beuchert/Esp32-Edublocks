@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="BlockPy">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>EduBlocks</title>
+
+  <link rel="stylesheet" href="fonts/icons/css/fontello.css">
+  <link rel="stylesheet" href="lib/picnic/picnic.min.css">
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="css/editor.css">
+</head>
+
+<body>
+  <div id="page">
+    <!-- React -->
+
+    <p class="loading-message">Loading...</p>
+  </div>
+
+  <!-- The Blockly toolbox, which is where blocks are dragged out from. If you
+    add your own blocks, you'll need to add them here as well. -->
+  <xml id="toolbox" style="display: none">
+    <category name="General" colour="336">
+      <block type="import_edupy"></block>
+      <block type="import_oled"></block>
+      <block type="progression"></block>
+      <block type="setPixel"></block>
+      <block type="oled_printLine"></block>
+      <block type="random"></block>
+      <block type="while_true"></block>
+      <block type="if"></block>
+      <block type="elif"></block>
+      <block type="else"></block>
+      <block type="df"></block>
+      <block type="whileout"></block>
+      <block type="time"></block>
+      <block type="import_math"></block>
+      <block type="sleep"></block>
+      <block type="print"></block>
+      <block type="equalsblock"></block>
+      <block type="define"></block>
+      <block type="greater"></block>
+    </category>
+    <category name="EduPy" colour="60">
+
+      <category name="Kit 1" colour="196">
+        <block type="led_on"></block>
+        <block type="led_off"></block>
+        <block type="button_pressed"></block>
+        <block type="all_on"></block>
+        <block type="all_off"></block>
+        <block type="all_blink"></block>
+        <block type="button"></block>
+        <block type="buzzer"></block>
+        <block type="blink"></block>
+        <block type="user_input"></block>
+        <block type="crossing"></block>
+        <block type="dot"></block>
+        <block type="dash"></block>
+        <block type="letter"></block>
+        <block type="word"></block>
+      </category>
+      <category name="Kit 2" colour="45">
+        <block type="2led_on"></block>
+        <block type="2led_off"></block>
+        <block type="2buzzer"></block>
+        <block type="temperature"></block>
+        <block type="ldr"></block>
+        <block type="capacitor"></block>
+        <block type="motion"></block>
+        <block type="alarm"></block>
+      </category>
+      <category name="Kit 3" colour="0">
+        <block type="forward"></block>
+        <block type="backward"></block>
+        <block type="turn_left"></block>
+        <block type="turn_right"></block>
+        <block type="stop"></block>
+        <block type="get_reading"></block>
+        <block type="line_test"></block>
+        <block type="key_control"></block>
+        <block type="line_follower"></block>
+        <block type="avoid"></block>
+      </category>
+    </category>
+    <category name="Minecraft" colour="120">
+      <category name="General" colour="270">
+        <block type="mcimport"></block>
+        <block type="mccreate"></block>
+        <block type="import_block"></block>
+
+
+      </category>
+      <category name="Commands" colour="120">
+        <block type="mcpost"></block>
+        <block type="mcpos"></block>
+        <block type="varprint"></block>
+        <block type="setpos"></block>
+        <block type="campos"></block>
+        <block type="getblock"></block>
+        <block type="cameraset"></block>
+        <block type="setblock"></block>
+        <block type="mcvar"></block>
+        <block type="mctext"></block>
+        <block type="mcblocks"></block>
+        <block type="build"></block>
+        <block type="mctext2"></block>
+        <block type="mctext5"></block>
+        <block type="mcblocks8"></block>
+
+        <block type="return"></block>
+        <block type="getdist"></block>
+      </category>
+    </category>
+    <category name="Sonic Pi" colour="180">
+      <block type="import_sonic"></block>
+      <block type="sampleson"></block>
+
+    </category>
+  </xml>
+
+  <!-- The main Blockly files -->
+  <script src="blockly/blockly_compressed.js"></script>
+  <script src="blockly/python_compressed.js"></script>
+  <script src="blockly/msg/js/en.js"></script>
+
+  <script src="lib/ace9/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="lib/ace9/mode-python.js" type="text/javascript" charset="utf-8"></script>
+  <script src="lib/ace9/theme-monokai.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- <script src="block_generators.js"></script>
+  <script src="block_definitions.js"></script> -->
+
+  <script src="lib/FileSaver.js"></script>
+  <script src="lib/term.js"></script>
+
+  <script src="build/main.js"></script>
+
+</body>
+
+</html>

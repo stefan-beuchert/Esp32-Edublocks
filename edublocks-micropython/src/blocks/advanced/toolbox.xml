@@ -1,0 +1,13 @@
+<category name="Advanced" colour="70">
+  <category name="Http Client" colour="70">
+    <block type="http_client_import_rest"></block>
+    <block type="https_client_create_connection"></block>
+    <block type="http_client_create_connection"></block>
+    <block type="http_client_request"></block>
+    <block type="http_client_responce"></block>
+    <block type="inline_print"></block>
+    <block type="http_client_status"></block>
+    <block type="http_client_reason"></block>
+    <block type="http_client_read"></block>
+  </category>
+</category>

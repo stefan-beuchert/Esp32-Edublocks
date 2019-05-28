@@ -1,0 +1,8 @@
+node_modules
+.lastupload
+.cache
+dist
+*.pyc
+.DS_Store
+*.log
+networks.json

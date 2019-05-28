@@ -1,0 +1,34 @@
+{
+  "devDependencies": {
+    "@types/del": "^3.0.1",
+    "@types/gulp": "^4.0.5",
+    "@types/gulp-debug": "^2.0.31",
+    "@types/gulp-gzip": "^0.0.31",
+    "@types/gulp-if": "^0.0.33",
+    "@types/gulp-uglify": "^3.0.5",
+    "@types/node": "^10.1.4",
+    "@types/pump": "^1.0.1",
+    "@types/shelljs": "^0.8.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0",
+    "shelljs": "^0.8.2",
+    "ts-node": "^6.0.5",
+    "typescript": "^2.9.1"
+  },
+  "scripts": {
+    "mount-sys-osx": "hdiutil attach images/sys.img -mountpoint ./sys-fs",
+    "umount-sys-osx": "hdiutil detach ./sys-fs",
+    "mount-sys-linux": "sudo mount -o uid=$(id -u),gid=$(id -g) images/sys.img ./sys-fs",
+    "umount-sys-linux": "sudo umount ./sys-fs",
+    "bundle": "gulp",
+    "flash-erase": "esptool.py --chip esp32 -b 921600 erase_flash",
+    "flash-micropython": "esptool.py --chip esp32 -b 921600 write_flash -z 0x1000 images/mp.bin",
+    "flash-sys": "esptool.py --chip esp32 -b 921600 write_flash -z 0x200000 images/sys.img"
+  },
+  "dependencies": {}
+}
