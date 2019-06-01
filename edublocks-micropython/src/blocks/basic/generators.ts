@@ -1,12 +1,10 @@
 export default function define(Python: Blockly.BlockGenerators) {
   
-  // block von uns
-  /*
+
     Python['import_lirc'] = () => {
       return 'import lirc\n';
     };
-  */
-  // block ende
+
   
   Python['import_edupy'] = function (block) {
     const code = 'from edupy import *\n';
