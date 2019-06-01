@@ -17,5 +17,5 @@ yarn
 yarn run mount-sys-linux
 yarn run bundle
 yarn run umount-sys-linux
-sudo yarn run flash-micropython -> hier boot drücken
+sudo yarn run flash-micropython
 sudo yarn run flash-sys
