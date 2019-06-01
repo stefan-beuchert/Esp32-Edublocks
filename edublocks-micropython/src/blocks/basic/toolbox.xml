@@ -1,7 +1,5 @@
 <category name="Basic" colour="336">
   
-  <block type="import_lirc"</block>
-  
   <block type="random"></block>
   <block type="while_true"></block>
   <block type="pass"></block>
