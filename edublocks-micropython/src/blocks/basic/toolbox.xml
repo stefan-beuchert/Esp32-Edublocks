@@ -1,4 +1,10 @@
 <category name="Basic" colour="336">
+  // block von uns
+  
+  <block type="import_lirc"</block>
+  
+  // block ende
+  
   <block type="random"></block>
   <block type="while_true"></block>
   <block type="pass"></block>
