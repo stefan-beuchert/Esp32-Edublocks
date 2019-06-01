@@ -1,4 +1,4 @@
-aus diesem Ordner
+git pull
 
 export ESPTOOL_PORT=/dev/ttyUSB0
 
