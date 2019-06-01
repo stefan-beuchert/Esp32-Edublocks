@@ -1,8 +1,6 @@
 export default function define(Blocks: Blockly.BlockDefinitions) {
   
-  // hier ein block von uns
-  
-  /* Blocks['import_lirc'] = {
+   Blocks['import_lirc'] = {
         init() {
           this.appendDummyInput()
               .appendField('import lirc');
@@ -13,8 +11,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
        this.setHelpUrl('http://www.example.com/');
         }
       };
-  */
-  // block ende
   
   Blocks['import_edupy'] = {
     init() {
