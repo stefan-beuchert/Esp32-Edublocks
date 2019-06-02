@@ -29,11 +29,11 @@ gpiozeroDefs(Blockly.Blocks);
 gpiozeroGens(Blockly.Python as any);
 toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'gpiozero', 'toolbox.xml'));
 
- import advancedDefs from './advanced/definitions';
- import advancedGens from './advanced/generators';
- advancedDefs(Blockly.Blocks);
- advancedGens(Blockly.Python as any);
- toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'advanced', 'toolbox.xml'));
+import advancedDefs from './advanced/definitions';
+import advancedGens from './advanced/generators';
+advancedDefs(Blockly.Blocks);
+advancedGens(Blockly.Python as any);
+toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'advanced', 'toolbox.xml'));
 
 toolBoxXml += '</xml>';
 
