@@ -9,19 +9,24 @@ export default function define(Python: Blockly.BlockGenerators) {
         'print "IR Sensor Ready....." \n' +
         'print " "';
         
-        // 'try: \n'
-        //    'while True: \n'
-        //       'if GPIO.input(sensor): \n'
-        //           //'GPIO.output(buzzer,True) \n'
-        //           'print "Object Detected" \n'
-        //           'while GPIO.input(sensor): \n'
-        //               'time.sleep(0.2) \n'
-        //       'else: \n'
-        //           'GPIO.output(buzzer,False) \n'
-        
-        
-        // 'except KeyboardInterrupt: \n'
-        //     'GPIO.cleanup() \n'
+        'import pulseio \n' +
+        'import board \n' +
+        'import adafruit_irremote \n' +
+        'pulsein = pulseio.PulseIn(board.REMOTEIN, maxlen=120, idle_state=True) \n' +
+        'decoder = adafruit_irremote.GenericDecode() \n' +
+
+        'while True: \n' +
+        '   pulses = decoder.read_pulses(pulsein) \n' +
+        '   print("Heard", len(pulses), "Pulses:", pulses) \n' +
+        '   try: \n' +
+        '       code = decoder.decode_bits(pulses, debug=False) \n' +
+        '       print("Decoded:", code) \n' +
+        '   except adafruit_irremote.IRNECRepeatException:  # unusual short code! \n' +
+        '       print("NEC repeat!") \n' +
+        '   except adafruit_irremote.IRDecodeException as e:     # failed to decode \n' +
+        '       print("Failed to decode: ", e.args) \n' +
+
+        '   print("----------------------------")';
         return code;
     };
 }
