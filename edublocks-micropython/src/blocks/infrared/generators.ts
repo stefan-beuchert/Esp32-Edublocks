@@ -1,15 +1,15 @@
 export default function define(Python: Blockly.BlockGenerators) {
     Python['import_lirc'] = function (block) {
         //const code = 'import lirc\n';
-        const code = 'import RPi.GPIO as GPIO \n' +
-        'import time \n' +
-        'sensor = 16 \n' +     
-        'GPIO.setmode(GPIO.BOARD) \n' +
-        'GPIO.setup(sensor,GPIO.IN) \n' +
-        'print "IR Sensor Ready....." \n' +
-        'print " "';
+        // 'import RPi.GPIO as GPIO \n' +
+        // 'import time \n' +
+        // 'sensor = 16 \n' +     
+        // 'GPIO.setmode(GPIO.BOARD) \n' +
+        // 'GPIO.setup(sensor,GPIO.IN) \n' +
+        // 'print "IR Sensor Ready....." \n' +
+        // 'print " "';
         
-        'import pulseio \n' +
+        const code = 'import pulseio \n' +
         'import board \n' +
         'import adafruit_irremote \n' +
         'pulsein = pulseio.PulseIn(board.REMOTEIN, maxlen=120, idle_state=True) \n' +
