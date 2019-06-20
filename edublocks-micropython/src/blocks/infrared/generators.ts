@@ -47,7 +47,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	'\t\t\t\tself.bin += 2**(x//2)\n' +
 	'\t\t\telse :\n' +
 	'\t\t\t\tpass\n' +
-	'\t\t\treturn hex(self.bin) , bin(self.bin)\n' +
+	'\t\treturn hex(self.bin) , bin(self.bin)\n' +
 	'\n' +
     'remote = Remote()\n' +
     'remote._routine()';
