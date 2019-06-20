@@ -33,7 +33,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	'\t\t\t\tself.prev_irq = 0\n' +
 	'\t\t\t\tfor x in range(len(self.buffer)):\n' +
     '\t\t\t\t\tself.buffer[x] = 0\n' + 
-    '\t\t\t\t' + branch +
+    `\t\t\t\t${branch}\n` +
 	'\n' +
 	'\tdef decode(self):\n' +
 	'\t\tself.bin = 0\n' +
