@@ -29,7 +29,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	'	    self.length += 1\n' +
 	'	    \n' +
 	'   def _routine(self):\n' +
-    '		    while True :\n' +
+    '       while True :\n' +
 	'		    sleep_ms(200)\n' +
 	'		    if ticks_diff(ticks_us(),self.prev_irq) > 200000 and self.length > 0 :\n' +
 	'			    print("DECODED = [{},{}] ".format(self.decode()[1],self.length))\n' +
@@ -37,8 +37,8 @@ export default function define(Python: Blockly.BlockGenerators) {
 	'			    self.length = 0\n' +
 	'			    self.prev_irq = 0\n' +
 	'			    for x in range(len(self.buffer)):\n' +
-    '				    self.buffer[x] = 0\n' +
-    '               ' + branch + '\n' +	    
+    '				    self.buffer[x] = 0\n' + 
+    '               \n' + branch +
 	'               \n' +
 	'   def decode(self):\n' +
 	'	    self.bin = 0\n' +
