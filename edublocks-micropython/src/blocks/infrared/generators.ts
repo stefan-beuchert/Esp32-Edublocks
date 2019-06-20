@@ -6,8 +6,8 @@ export default function define(Python: Blockly.BlockGenerators) {
         const code = 
     'class Remote: \n' +
 	'  def __init__(self):\n' +
-	'    self.recv = Pin(' + _pin + ', Pin.IN , Pin.PULL_UP)\n' +
-	'    self.recv.irq(trigger = Pin.IRQ_RISING|Pin.IRQ_FALLING , handler = self._handler)\n' +
+	'    self.recv = machine.Pin(' + _pin + ', machine.Pin.IN , machine.Pin.PULL_UP)\n' +
+	'    self.recv.irq(trigger = machine.Pin.IRQ_RISING|machine.Pin.IRQ_FALLING , handler = self._handler)\n' +
 	'    self.buffer = [0 for x in range(100)]\n' +
 	'    self.bin = 0\n' +
 	'    self.length = 0\n' +
@@ -19,14 +19,14 @@ export default function define(Python: Blockly.BlockGenerators) {
 	'      self.prev_irq = self.time\n' +
 	'      self.length = 0\n' +
 	'      return\n' +
-	'    self.buffer[self.length] = ticks_diff(self.time , self.prev_irq)\n' +
+	'    self.buffer[self.length] = time.ticks_diff(self.time , self.prev_irq)\n' +
 	'    self.prev_irq = self.time\n' +
 	'    self.length += 1\n' +
 	'\n' +
 	'  def _routine(self):\n' +
     '    while True :\n' +
-	'      sleep_ms(200)\n' +
-	'      if ticks_diff(ticks_us(),self.prev_irq) > 200000 and self.length > 0 :\n' +
+	'      time.sleep_ms(200)\n' +
+	'      if time.ticks_diff(time.ticks_us(),self.prev_irq) > 200000 and self.length > 0 :\n' +
 	'        print("DECODED = [{},{}] ".format(self.decode()[1],self.length))\n' +
     '\n' +
 	'        self.length = 0\n' +
