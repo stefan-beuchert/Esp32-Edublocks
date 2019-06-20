@@ -1,3 +1,3 @@
-<category name="infrared" colour="100">
-    <block type="import_lirc"></block>
+<category name="infrared" colour="20">
+    <block type="using_ir_remote"></block>
 </category>
