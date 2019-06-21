@@ -56,7 +56,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	  };
 
-	  Python['retrun_hex'] = function (block) {
+	  Python['return_hex'] = function (block) {
 		const code = 'return hex(self.bin) , bin(self.bin)' +
 		'\n';
 		return code;
