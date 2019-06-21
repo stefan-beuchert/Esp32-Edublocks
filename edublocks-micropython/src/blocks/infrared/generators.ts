@@ -1,4 +1,35 @@
 export default function define(Python: Blockly.BlockGenerators) {
+
+	Python['create_def'] = function(block){
+		let branch = Blockly.Python.statementToCode(block, 'DO');
+        branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+		const code = 'class Remote' + ':\n' + 
+		'remote = Remote()\n' +
+		'remote._routine()\n';
+
+		return code;
+	}
+
+	Python['remote_class'] = function(block){
+		const className = block.getFieldValue('className');
+		let branch = Blockly.Python.statementToCode(block, 'DO');
+        branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+		const code = 'def __' + className + '__(self)' + ':\n' + branch;
+		return code;
+	}
+
+	Python['pass'] = function (block) {
+		const _pin = block.getFieldValue('pin');
+		const code = 'self.recv = machine.Pin(' + _pin + ', machine.Pin.IN , machine.Pin.PULL_UP)\n' +
+		'    self.recv.irq(trigger = machine.Pin.IRQ_RISING|machine.Pin.IRQ_FALLING , handler = self._handler)\n' +
+		'    self.buffer = [0 for x in range(100)]\n' +
+		'    self.bin = 0\n' +
+		'    self.length = 0\n' +
+		'    self.prev_irq = 0\n' +
+		'\n';
+		return code;
+	  };
+
     Python['using_ir_remote'] = function (block) {
 		const _pin = block.getFieldValue('pin');
         let branch = Blockly.Python.statementToCode(block, 'DO');

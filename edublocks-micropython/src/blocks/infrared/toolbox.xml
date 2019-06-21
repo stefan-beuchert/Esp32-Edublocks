@@ -1,4 +1,7 @@
 <category name="infrared" colour="20">
+    <block type="remote_class"></block>
+    <block type="create_def"></block>
+    <block type="init_def_body"></block>
     <block type="using_ir_remote"></block>
     <block type="if"></block>
 </category>
