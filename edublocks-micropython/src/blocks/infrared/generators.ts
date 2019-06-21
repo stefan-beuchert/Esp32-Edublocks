@@ -53,5 +53,12 @@ export default function define(Python: Blockly.BlockGenerators) {
     'remote._routine()';
 
         return code;
-    };
+	};
+	
+	Python['if'] = function (block) {
+		const text_const = block.getFieldValue('var');
+		let branch = Blockly.Python.statementToCode(block, 'DO');
+		branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+		return 'if ' + text_const + ':\n' + branch;
+	  };
 }

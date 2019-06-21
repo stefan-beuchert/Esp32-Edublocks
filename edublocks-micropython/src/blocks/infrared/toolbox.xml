@@ -1,3 +1,4 @@
 <category name="infrared" colour="20">
     <block type="using_ir_remote"></block>
+    <block type="if"></block>
 </category>
