@@ -108,6 +108,18 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     },
   };
 
+  Blocks['continue'] = {
+    init() {
+      this.appendDummyInput()
+        .appendField('continue');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(336);
+      this.setTooltip('continue');
+      this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
   Blocks['decode_body'] = {
     init() {
       this.appendDummyInput()

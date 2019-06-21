@@ -62,6 +62,12 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	  };
 
+	  Python['continue'] = function (block) {
+		const code = 'continue' +
+		'\n';
+		return code;
+	  };
+
 	  Python['decode_body'] = function (block) {
 		const code = 'self.bin = 0\n' +
 		'm = 50000' +

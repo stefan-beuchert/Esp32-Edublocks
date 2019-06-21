@@ -13,6 +13,7 @@
     <block type="set_m"></block>
     <block type="set_bin"></block>
     <block type="return_hex"></block>
+    <block type="continue"></block>
 
     <block type="using_ir_remote"></block>
     <block type="if"></block>
