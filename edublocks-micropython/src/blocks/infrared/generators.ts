@@ -8,7 +8,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 		'remote._routine()\n';
 
 		return code;
-	}
+	};
 
 	Python['create_def'] = function(block){
 		const className = block.getFieldValue('className');
@@ -16,7 +16,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
 		const code = 'def __' + className + '__(self)' + ':\n' + branch;
 		return code;
-	}
+	};
 
 	Python['pass'] = function (block) {
 		const _pin = block.getFieldValue('pin');
