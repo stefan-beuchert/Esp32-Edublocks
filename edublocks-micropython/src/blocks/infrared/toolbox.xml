@@ -7,6 +7,12 @@
     <block type="handler_def_body"></block>
     <block type="if_interrupt_request_0"></block>
     <block type="time_sleep_ms"></block>
+    <block type="tick_bigger_200000"></block>
+    <block type="buffer_set_0"></block>
+    <block type="decode_body"></block>
+    <block type="set_m"></block>
+    <block type="set_bin"></block>
+    <block type="return_hex"></block>
 
     <block type="using_ir_remote"></block>
     <block type="if"></block>

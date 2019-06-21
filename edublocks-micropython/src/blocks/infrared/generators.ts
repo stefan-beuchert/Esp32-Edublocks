@@ -14,7 +14,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 		const className = block.getFieldValue('className');
 		let branch = Blockly.Python.statementToCode(block, 'DO');
         branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
-		const code = 'def _' + className + '(self)' + ':\n' + branch;
+		const code = 'def ' + className + '(self)' + ':\n' + branch;
 		return code;
 	};
 
@@ -37,10 +37,48 @@ export default function define(Python: Blockly.BlockGenerators) {
 		'\n';
 		return code;
 	  };
-
+	  
 	  Python['set_time'] = function (block) {
-		const code = 'self.time = ticks_us()\n' +
+		const code = 'self.time = ticks_us()' +
 		'\n';
+		return code;
+	  };
+
+	  Python['set_m'] = function (block) {
+		const code = 'm = min(self.buffer[x],m)' +
+		'\n';
+		return code;
+	  };
+
+	  Python['set_bin'] = function (block) {
+		const code = 'self.bin += 2**(x//2)' +
+		'\n';
+		return code;
+	  };
+
+	  Python['retrun_hex'] = function (block) {
+		const code = 'return hex(self.bin) , bin(self.bin)' +
+		'\n';
+		return code;
+	  };
+
+	  Python['decode_body'] = function (block) {
+		const code = 'self.bin = 0\n' +
+		'm = 50000' +
+		'\n';
+		return code;
+	  };
+
+	  Python['buffer_set_0'] = function (block) {
+		const code = 'self.buffer[x] = 0' + 
+		'\n'
+		return code;
+	  };
+
+	  Python['tick_bigger_200000'] = function (block) {
+		const code = 'print("DECODED = [{},{}] ".format(self.decode()[1],self.length))\n' +
+		'self.length = 0\n' +
+		'self.prev_irq = 0\n';
 		return code;
 	  };
 
