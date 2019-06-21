@@ -39,7 +39,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	  };
 	  
 	  Python['set_time'] = function (block) {
-		const code = 'self.time = ticks_us()' +
+		const code = 'self.time = time.ticks_us()' +
 		'\n';
 		return code;
 	  };
@@ -125,7 +125,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	'    self.prev_irq = 0\n' +
 	'\n' +
 	'  def _handler(self , source):\n' +
-	'    self.time = ticks_us()\n' +
+	'    self.time = time.ticks_us()\n' +
 	'    if self.prev_irq == 0:\n' +
 	'      self.prev_irq = self.time\n' +
 	'      self.length = 0\n' +
