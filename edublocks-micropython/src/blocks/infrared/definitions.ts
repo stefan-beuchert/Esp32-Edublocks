@@ -4,7 +4,8 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
         this.appendDummyInput()
             .appendField('using_ir_remote')
             .appendField('PIN = ')
-            .appendField(new Blockly.FieldTextInput('pin'), 'pin');
+            .appendField(new Blockly.FieldTextInput('pin'), 'pin')
+            .appendField(':');
         this.appendStatementInput('DO')
             .appendField('');
         this.setPreviousStatement(true, null);
