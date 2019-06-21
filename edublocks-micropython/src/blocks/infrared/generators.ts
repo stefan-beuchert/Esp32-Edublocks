@@ -38,13 +38,21 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	  };
 
-	  Python['handler_def_body'] = function (block) {
-		let branch = Blockly.Python.statementToCode(block, 'DO');
-		branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
-		const pin = block.getFieldValue('pin');
+	  Python['set_time'] = function (block) {
 		const code = 'self.time = ticks_us()\n' +
-		'if self.prev_irq == 0:\n' + branch +
-		'self.buffer[self.length] = time.ticks_diff(self.time , self.prev_irq)\n' +
+		'\n';
+		return code;
+	  };
+
+	  Python['time_sleep_ms'] = function (block) {
+		const ms = block.getFieldValue('ms');
+		const code = 'time.sleep_ms(' + ms + ')\n' +
+		'\n';
+		return code;
+	  };
+
+	  Python['handler_def_body'] = function (block) {
+		const code = 'self.buffer[self.length] = time.ticks_diff(self.time , self.prev_irq)\n' +
 		'self.prev_irq = self.time\n' +
 		'self.length += 1\n' +
 		'\n';

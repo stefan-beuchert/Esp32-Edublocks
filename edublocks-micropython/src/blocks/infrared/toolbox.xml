@@ -3,8 +3,11 @@
     <block type="create_def_with_self"></block>
     <block type="create_def_with_self_and_source"></block>
     <block type="init_def_body"></block>
+    <block type="set_time"></block>
     <block type="handler_def_body"></block>
     <block type="if_interrupt_request_0"></block>
+    <block type="time_sleep_ms"></block>
+
     <block type="using_ir_remote"></block>
     <block type="if"></block>
 </category>

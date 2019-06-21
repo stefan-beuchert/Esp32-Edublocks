@@ -60,12 +60,36 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     },
   };
 
+  Blocks['set_time'] = {
+    init() {
+      this.appendDummyInput()
+        .appendField('set_time');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(336);
+      this.setTooltip('set_time');
+      this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['time_sleep_ms'] = {
+    init() {
+      this.appendDummyInput()
+        .appendField('time_sleep_ms')
+        .appendField('ms = ')
+        .appendField(new Blockly.FieldTextInput('ms'), 'ms');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(336);
+      this.setTooltip('time_sleep_ms');
+      this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
   Blocks['handler_def_body'] = {
     init() {
       this.appendDummyInput()
         .appendField('handler_def_body');
-      this.appendStatementInput('DO')
-        .appendField('');
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(336);
