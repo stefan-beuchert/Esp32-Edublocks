@@ -1,6 +1,6 @@
 export default function define(Python: Blockly.BlockGenerators) {
 
-	Python['create_def'] = function(block){
+	Python['remote_class'] = function(block){
 		let branch = Blockly.Python.statementToCode(block, 'DO');
         branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
 		const code = 'class Remote' + ':\n' + 
@@ -10,7 +10,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	}
 
-	Python['remote_class'] = function(block){
+	Python['create_def'] = function(block){
 		const className = block.getFieldValue('className');
 		let branch = Blockly.Python.statementToCode(block, 'DO');
         branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
