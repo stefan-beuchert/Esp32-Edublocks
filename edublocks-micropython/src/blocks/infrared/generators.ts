@@ -1,8 +1,8 @@
 export default function define(Python: Blockly.BlockGenerators) {
     Python['using_ir_remote'] = function (block) {
+		const _pin = block.getFieldValue('pin');
         let branch = Blockly.Python.statementToCode(block, 'DO');
-        //branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
-        const _pin = block.getFieldValue('pin');
+        branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
         const code = 
     'class Remote: \n' +
 	'  def __init__(self):\n' +
@@ -50,7 +50,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	'    return hex(self.bin) , bin(self.bin)\n' +
 	'\n' +
     'remote = Remote()\n' +
-    'remote._routine()';
+    'remote._routine()\n';
 
         return code;
 	};
