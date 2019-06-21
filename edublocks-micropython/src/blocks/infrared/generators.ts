@@ -3,7 +3,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	Python['remote_class'] = function(block){
 		let branch = Blockly.Python.statementToCode(block, 'DO');
         branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
-		const code = 'class Remote' + ':\n' + 
+		const code = 'class Remote' + ':\n' + branch +
 		'remote = Remote()\n' +
 		'remote._routine()\n';
 
