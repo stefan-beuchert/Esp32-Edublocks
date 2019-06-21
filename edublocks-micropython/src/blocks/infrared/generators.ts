@@ -10,23 +10,51 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	};
 
-	Python['create_def'] = function(block){
+	Python['create_def_with_self'] = function(block){
 		const className = block.getFieldValue('className');
 		let branch = Blockly.Python.statementToCode(block, 'DO');
         branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
-		const code = 'def __' + className + '__(self)' + ':\n' + branch;
+		const code = 'def _' + className + '(self)' + ':\n' + branch;
+		return code;
+	};
+
+	Python['create_def_with_self_and_source'] = function(block){
+		const className = block.getFieldValue('className');
+		let branch = Blockly.Python.statementToCode(block, 'DO');
+        branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+		const code = 'def _' + className + '(self, source)' + ':\n' + branch;
 		return code;
 	};
 
 	Python['init_def_body'] = function (block) {
 		const pin = block.getFieldValue('pin');
 		const code = 'self.recv = machine.Pin(' + pin + ', machine.Pin.IN , machine.Pin.PULL_UP)\n' +
-		'    self.recv.irq(trigger = machine.Pin.IRQ_RISING|machine.Pin.IRQ_FALLING , handler = self._handler)\n' +
-		'    self.buffer = [0 for x in range(100)]\n' +
-		'    self.bin = 0\n' +
-		'    self.length = 0\n' +
-		'    self.prev_irq = 0\n' +
+		'self.recv.irq(trigger = machine.Pin.IRQ_RISING|machine.Pin.IRQ_FALLING , handler = self._handler)\n' +
+		'self.buffer = [0 for x in range(100)]\n' +
+		'self.bin = 0\n' +
+		'self.length = 0\n' +
+		'self.prev_irq = 0\n' +
 		'\n';
+		return code;
+	  };
+
+	  Python['handler_def_body'] = function (block) {
+		let branch = Blockly.Python.statementToCode(block, 'DO');
+		branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+		const pin = block.getFieldValue('pin');
+		const code = 'self.time = ticks_us()\n' +
+		'if self.prev_irq == 0:\n' + branch +
+		'self.buffer[self.length] = time.ticks_diff(self.time , self.prev_irq)\n' +
+		'self.prev_irq = self.time\n' +
+		'self.length += 1\n' +
+		'\n';
+		return code;
+	  };
+
+	  Python['if_interrupt_request_0'] = function (block) {
+		const code = 'self.prev_irq = self.time\n' +
+		'self.length = 0\n' +
+		'return\n';
 		return code;
 	  };
 

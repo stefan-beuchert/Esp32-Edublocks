@@ -14,18 +14,34 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     },
   };
 
-  Blocks['create_def'] = {
+  Blocks['create_def_with_self'] = {
     init() {
       this.appendDummyInput()
-          .appendField('create_def')
+          .appendField('create_def_with_self')
           .appendField('Name = ')
-          .appendField(new Blockly.FieldTextInput('className'), 'className')
+          .appendField(new Blockly.FieldTextInput('className'), 'className');
       this.appendStatementInput('DO')
           .appendField('');
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(20);
-    this.setTooltip('create_def');
+    this.setTooltip('create_def_with_self');
+    this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['create_def_with_self_and_source'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('create_def_with_self_and_source')
+          .appendField('Name = ')
+          .appendField(new Blockly.FieldTextInput('className'), 'className');
+      this.appendStatementInput('DO')
+          .appendField('');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(20);
+    this.setTooltip('create_def_with_self_and_source');
     this.setHelpUrl('http://www.example.com/');
     },
   };
@@ -40,6 +56,32 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(336);
       this.setTooltip('init_def_body');
+      this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['handler_def_body'] = {
+    init() {
+      this.appendDummyInput()
+        .appendField('handler_def_body');
+      this.appendStatementInput('DO')
+        .appendField('');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(336);
+      this.setTooltip('handler_def_body');
+      this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['if_interrupt_request_0'] = {
+    init() {
+      this.appendDummyInput()
+        .appendField('if_interrupt_request_0');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(336);
+      this.setTooltip('if_interrupt_request_0');
       this.setHelpUrl('http://www.example.com/');
     },
   };
