@@ -33,7 +33,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 		'  self.time = time.ticks_us()\n' +
 		'  if self.prev_irq == 0:\n' +
 		'    self.prev_irq = self.time\n' +
-		'		 self.length = 0\n' +
+		'    self.length = 0\n' +
 		'    return\n' +
 		'  self.buffer[self.length] = time.ticks_diff(self.time , self.prev_irq)\n' +
 		'  self.prev_irq = self.time\n' +
@@ -74,5 +74,5 @@ export default function define(Python: Blockly.BlockGenerators) {
 		'  return hex(self.bin), bin(self.bin)\n';
 		return code;
 	};
-	
+
 }
