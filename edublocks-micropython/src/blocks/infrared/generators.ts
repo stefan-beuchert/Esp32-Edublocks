@@ -17,7 +17,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 
 	Python['init'] = function (block) {
 		const pin = block.getFieldValue('pin');
-		const code = 'def __init__(self):\n'
+		const code = 'def __init__(self):\n' +
 		'  self.recv = machine.Pin(' + pin + ', machine.Pin.IN , machine.Pin.PULL_UP)\n' +
 		'  self.recv.irq(trigger = machine.Pin.IRQ_RISING|machine.Pin.IRQ_FALLING , handler = self._handler)\n' +
 		'  self.buffer = [0 for x in range(100)]\n' +
@@ -29,7 +29,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	};
 
 	Python['handler'] = function (block) {
-		const code = 'def _handler(self, source):\n'
+		const code = 'def _handler(self, source):\n' +
 		'  self.time = time.ticks_us()\n' +
 		'  if self.prev_irq == 0:\n' +
 		'    self.prev_irq = self.time\n' +
@@ -59,7 +59,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 	};
 
 	Python['decode'] = function (block) {
-		const code = 'def decode(self):\n'
+		const code = 'def decode(self):\n' +
 		'  self.bin= 0\n' +
 		'  m = 50000\n' +
 		'  for x in range(self.length):\n' +
