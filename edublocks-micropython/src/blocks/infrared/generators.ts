@@ -15,33 +15,6 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	};
 
-	Python['init'] = function (block) {
-		const pin = block.getFieldValue('pin');
-		const code = 'def __init__(self):\n' +
-		'  self.recv = machine.Pin(' + pin + ', machine.Pin.IN , machine.Pin.PULL_UP)\n' +
-		'  self.recv.irq(trigger = machine.Pin.IRQ_RISING|machine.Pin.IRQ_FALLING , handler = self._handler)\n' +
-		'  self.buffer = [0 for x in range(100)]\n' +
-		'  self.bin = 0\n' +
-		'  self.length = 0\n' +
-		'  self.prev_irq = 0\n' +
-		'\n';
-		return code;
-	};
-
-	Python['handler'] = function (block) {
-		const code = 'def _handler(self, source):\n' +
-		'  self.time = time.ticks_us()\n' +
-		'  if self.prev_irq == 0:\n' +
-		'    self.prev_irq = self.time\n' +
-		'		 self.length = 0\n' +
-		'    return\n' +
-		'  self.buffer[self.length] = time.ticks_diff(self.time , self.prev_irq)\n' +
-		'  self.prev_irq = self.time\n' +
-		'  self.length += 1\n' +
-		'\n';
-		return code;
-	};
-
 	Python['remote_class'] = function(block){
 		let branch = Blockly.Python.statementToCode(block, 'DO');
         branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
