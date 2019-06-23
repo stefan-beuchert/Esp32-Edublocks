@@ -14,6 +14,45 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     this.setHelpUrl('http://www.example.com/');
     },
   };
+
+  Blocks['using_remote'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('using remote ')
+          .appendField(new Blockly.FieldTextInput('className'), 'className');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(20);
+    this.setTooltip('Using remote class');
+    this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['init'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('init(pin = ')
+          .appendField(new Blockly.FieldTextInput('pin'), 'pin')
+          .appendField(')');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(20);
+    this.setTooltip('Initiate remote class');
+    this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['handler'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('handler()');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(20);
+    this.setTooltip('Handle remote class');
+    this.setHelpUrl('http://www.example.com/');
+    },
+  };
   
   Blocks['remote_class'] = {
     init() {
