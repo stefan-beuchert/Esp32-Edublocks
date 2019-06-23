@@ -28,7 +28,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     },
   };
 
-  Blocks['init'] = {
+  Blocks['__init__'] = {
     init() {
       this.appendDummyInput()
           .appendField('init(pin = ')

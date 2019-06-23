@@ -15,7 +15,7 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	};
 
-	Python['init'] = function (block) {
+	Python['__init__'] = function (block) {
 		const pin = block.getFieldValue('pin');
 		const code = 'def __init__(self):\n' +
 		'  self.recv = machine.Pin(' + pin + ', machine.Pin.IN , machine.Pin.PULL_UP)\n' +
