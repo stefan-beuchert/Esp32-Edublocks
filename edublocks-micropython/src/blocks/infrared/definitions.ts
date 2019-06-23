@@ -27,6 +27,20 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     this.setHelpUrl('http://www.example.com/');
     },
   };
+
+  Blocks['init'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('init(pin = ')
+          .appendField(new Blockly.FieldTextInput('pin'), 'pin')
+          .appendField(')');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(20);
+    this.setTooltip('Initiate remote class');
+    this.setHelpUrl('http://www.example.com/');
+    },
+  };
   
   Blocks['remote_class'] = {
     init() {
