@@ -54,6 +54,8 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     init() {
       this.appendDummyInput()
           .appendField('routine()');
+      this.appendStatementInput('DO')
+          .appendField('');
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(20);
