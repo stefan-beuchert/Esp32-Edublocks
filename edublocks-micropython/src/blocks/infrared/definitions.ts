@@ -1,5 +1,20 @@
 export default function define(Blocks: Blockly.BlockDefinitions) {
 
+  Blocks['class'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('class ')
+          .appendField(new Blockly.FieldTextInput('className'), 'className');
+      this.appendStatementInput('DO')
+          .appendField('');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(20);
+    this.setTooltip('Generate class');
+    this.setHelpUrl('http://www.example.com/');
+    },
+  };
+  
   Blocks['remote_class'] = {
     init() {
       this.appendDummyInput()

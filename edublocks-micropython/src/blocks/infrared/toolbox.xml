@@ -1,4 +1,5 @@
 <category name="infrared" colour="20">
+    <block type="class"></block>
     <block type="remote_class"></block>
     <block type="create_def_with_self"></block>
     <block type="create_def_with_self_and_source"></block>
