@@ -58,6 +58,14 @@ export default function define(Python: Blockly.BlockGenerators) {
 		return code;
 	};
 
+	Python['if_signal_valid'] = function(block){
+		let branch = Blockly.Python.statementToCode(block, 'DO');
+        branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+		const code = 'time.sleep_ms(200)\n' +
+		'if time.ticks_diff(time.ticks_us(), self.prev_irq) > 200000 and self.length > 0:\n' + branch;
+		return code;
+	};
+
 	Python['decode'] = function (block) {
 		const code = 'def decode(self):\n' +
 		'  self.bin= 0\n' +

@@ -5,5 +5,6 @@
     <block type="handler"></block>
     <block type="routine"></block>
     <block type="signal_recv"></block>
+    <block type="if_signal_valid"></block>
     <block type="decode"></block>
 </category>

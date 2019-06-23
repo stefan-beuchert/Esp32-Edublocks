@@ -11,7 +11,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(20);
     this.setTooltip('Generate class');
-    this.setHelpUrl('http://www.example.com/');
     },
   };
 
@@ -24,7 +23,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(20);
     this.setTooltip('Using remote class');
-    this.setHelpUrl('http://www.example.com/');
     },
   };
 
@@ -38,7 +36,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(20);
     this.setTooltip('Initiate remote class');
-    this.setHelpUrl('http://www.example.com/');
     },
   };
 
@@ -50,7 +47,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(20);
     this.setTooltip('Handle remote class');
-    this.setHelpUrl('http://www.example.com/');
     },
   };
 
@@ -64,7 +60,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(20);
     this.setTooltip('Handle signals');
-    this.setHelpUrl('http://www.example.com/');
     },
   };
 
@@ -76,7 +71,19 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(20);
     this.setTooltip('Hanlde a specific signal');
-    this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['if_signal_valid'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('if signal is valid');
+      this.appendStatementInput('DO')
+          .appendField('');
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(20);
+    this.setTooltip('Check if signal is valid');
     },
   };
 
@@ -88,7 +95,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
       this.setNextStatement(true, null);
       this.setColour(20);
     this.setTooltip('Decode signal');
-    this.setHelpUrl('http://www.example.com/');
     },
   };
   
