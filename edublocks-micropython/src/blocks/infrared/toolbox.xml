@@ -1,9 +1,20 @@
 <category name="infrared" colour="20">
-    <block type="class"></block>
-    <block type="using_remote"></block>
-    <block type="init"></block>
-    <block type="handler"></block>
-    <block type="routine"></block>
-    <block type="signal_recv"></block>
-    <block type="decode"></block>
+    <block type="remote_class"></block>
+    <block type="create_def_with_self"></block>
+    <block type="create_def_with_self_and_source"></block>
+    <block type="init_def_body"></block>
+    <block type="set_time"></block>
+    <block type="handler_def_body"></block>
+    <block type="if_interrupt_request_0"></block>
+    <block type="time_sleep_ms"></block>
+    <block type="tick_bigger_200000"></block>
+    <block type="buffer_set_0"></block>
+    <block type="decode_body"></block>
+    <block type="set_m"></block>
+    <block type="set_bin"></block>
+    <block type="return_hex"></block>
+    <block type="continue"></block>
+
+    <block type="using_ir_remote"></block>
+    <block type="if"></block>
 </category>
