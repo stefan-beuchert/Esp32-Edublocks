@@ -37,7 +37,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "picnic": "^6.3.2",
     "preact": "^8.1.0"
   }
